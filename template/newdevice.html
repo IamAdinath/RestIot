@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new Device</title>
+</head>
+<body>
+    <div>
+        <form method="post">
+            Name : <input type="text" placeholder="Device name" name="name"> <br>
+            Device Id : <input type="text" placeholder="Device code" name="DevId"> <br>
+            temp sensor : <select name="sensorCode">
+                                {% if tmmsensors %}
+                                    {% for tmp in  tmmsensors %}
+                                            <option> {{ tmp }} </option>
+                                    {% endfor  %}
+                                {% endif %}
+                          </select>
+            pressure sensor : <select name="sensorCode">
+                                {% if pressures %}
+                                    {% for sensor in  pressures %}
+                                            <option> {{ sensor }} </option>
+                                    {% endfor  %}
+                                {% endif %}
+                          </select>
+            <input type="button" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
